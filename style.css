@@ -1,0 +1,32 @@
+button {
+  transform: scale(1.25);
+}
+
+body {
+  background-image: url("spacecolonybackground.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+button {
+  background-color: black;
+  color: rgb(0, 195, 255);
+  border: 2px solid rgb(0, 195, 255);
+  margin: 15px;
+}
+
+#menu p, h1, h2, h3 {
+  text-shadow: 
+     1px  1px 0 black,
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     0px  1px 0 black,
+     0px -1px 0 black,
+     1px  0px 0 black,
+    -1px  0px 0 black;
+}
