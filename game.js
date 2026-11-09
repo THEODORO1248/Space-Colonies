@@ -64,9 +64,12 @@ function Game() {
       confirmButton2.addEventListener("click", function() {
         const colonyName = document.getElementById("colonyname");
         colony.name = colonyName.value;
-        colonyName.style.display = 'none';
-        confirmButton2.style.display = 'none';
-        subtitle.style.display = 'none';
+        if(colony.name !== "") {
+          colonyName.style.display = 'none';
+          confirmButton2.style.display = 'none';
+          subtitle.style.display = 'none';
+        }
+        
       });
     });
     
