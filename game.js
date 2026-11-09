@@ -52,6 +52,23 @@ function Game() {
     impossible.addEventListener("click", function() {
       defineAndShowResources(175, 175, 150);
     });
+    confirmButton.addEventListener("click", function() {
+      menu.innerHTML = `
+      <input id = "colonyname" type = "text" placeholder = "Type the name of your colony: ">
+      <br>
+      <button id = "confirmbutton2">CONFIRM</button>
+      `
+      listofitens.style.display = 'none';
+      confirmButton.style.display = 'none';
+      const confirmButton2 = document.getElementById("confirmbutton2");
+      confirmButton2.addEventListener("click", function() {
+        const colonyName = document.getElementById("colonyname");
+        colony.name = colonyName.value;
+        colonyName.style.display = 'none';
+        confirmButton2.style.display = 'none';
+        subtitle.style.display = 'none';
+      });
+    });
     
   });
   infobutton.addEventListener("click", function() {
@@ -69,6 +86,7 @@ function Game() {
       <button id = "start">START</button>
       <button id = "infobutton">INFO</button>
       `
+
       subtitle.textContent = "";
       Game();
     });
