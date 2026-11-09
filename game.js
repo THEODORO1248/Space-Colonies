@@ -54,7 +54,7 @@ function Game() {
     });
     confirmButton.addEventListener("click", function() {
       menu.innerHTML = `
-      <input id = "colonyname" type = "text" placeholder = "Type the name of your colony: ">
+      <input id = "colonyname" type = "text" placeholder = "Name of your colony: ">
       <br>
       <button id = "confirmbutton2">CONFIRM</button>
       `
