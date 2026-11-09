@@ -68,6 +68,11 @@ function Game() {
           colonyName.style.display = 'none';
           confirmButton2.style.display = 'none';
           subtitle.style.display = 'none';
+          updateUI();
+          listofitens.style.display = 'block';
+          colonyName.style.display = 'none';
+        } else {
+          alert("Please, put a valid name for your colony");
         }
         
       });
@@ -95,23 +100,7 @@ function Game() {
     });
   });
 
-  function nextDay() {
-    if(game.running) {
-      game.day++;
-      resources.water -= 1.5 * colony.population;
-      resources.food -= colony.population;
-      if(resources.water <= 0 || resources.food <= 0) {
-        game.running = false;
-      }
-      updateUI();
-    } else {
-      return;
-    }
-  }
-
-  function updateUI() {
   
-  }
   
   function defineAndShowResources(a, b, c) {
     resources.water = a;
@@ -130,3 +119,29 @@ function Game() {
 }
 
 Game();
+
+function nextDay() {
+    if(game.running) {
+      game.day++;
+      resources.water -= 1.5 * colony.population;
+      resources.food -= colony.population;
+      if(resources.water <= 0 || resources.food <= 0) {
+        game.running = false;
+      }
+    } else {
+      return;
+    }
+  }
+
+function updateUI() {
+  listofitens.innerHTML = `
+  <ul>
+    <li>Day: ${game.day}</li>
+    <li>Colony name: ${colony.name} colony</li>
+    <li>Population: ${colony.population}</li>
+    <li>Water: ${resources.water}</li>
+    <li>Food: ${resources.food}</li>
+    <li>Energy: ${resources.energy}</li>
+  </ul>
+  `;
+}
