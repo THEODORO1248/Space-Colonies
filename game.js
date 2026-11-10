@@ -6,7 +6,7 @@ const game = {
 const colony = {
   name: "New Horizon",
   population: 4,
-  bases: 2,
+  greenhouses: 0,
   centralBases: 1
 }
 
@@ -107,7 +107,7 @@ function Game() {
     resources.food = b;
     resources.energy = c;
     listofitens.innerHTML = `
-    <ul>
+    <ul class = "center">
       <li>Water: ${resources.water}</li>
       <li>Food: ${resources.food}</li>
       <li>Energy: ${resources.energy}</li>
@@ -135,13 +135,25 @@ function nextDay() {
 
 function updateUI() {
   listofitens.innerHTML = `
-  <ul>
-    <li>Day: ${game.day}</li>
-    <li>Colony name: ${colony.name} colony</li>
-    <li>Population: ${colony.population}</li>
-    <li>Water: ${resources.water}</li>
-    <li>Food: ${resources.food}</li>
-    <li>Energy: ${resources.energy}</li>
-  </ul>
-  `;
+  <table border = "1">
+    <tr>
+      <th>Day: </td>
+      <th>Colony name: </td>
+      <th>Population</td>
+      <th>Water: </td>
+      <th>Food: </td>
+      <th>Energy: </td>
+    </tr>
+    <tr>
+      <td>${game.day}</td>
+      <td>${colony.name}</td>
+      <td>${colony.population}</td>
+      <td>${resources.water}</td>
+      <td>${resources.food}</td>
+      <td>${resources.energy}</td>
+    </tr>
+    
+  </table>
+  `
+}
 }
